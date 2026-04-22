@@ -75,31 +75,6 @@ Documento que describe la estructura de carpetas y responsabilidades. El objetiv
           baseUrl: "https://<TU_API_BASE_URL>"
       }
 
-## Reglas técnicas y buenas prácticas
-- Componentes específicos de feature en `features/.../components`. Componentes globales en `shared/components`.
-- Hooks específicos en `features/.../hooks`. Hooks genéricos en `shared/hooks`.
-- Lógica de fetch/axios en `features/.../services`. Cliente base en `shared/services`.
-- Centralizar tipos por feature en `features/.../types`.
-- Usar barrel `index.ts` en cada feature para exportaciones limpias.
-- Nombres: PascalCase para componentes, camelCase para hooks y utilidades, kebab-case o carpetas consistentes.
-- Separación UI / lógica: los hooks contienen la lógica; los componentes, la presentación.
-- Evitar archivos gigantes; preferir componentes pequeños y focused.
-- Mantener import paths relativos consistentes y corregir imports rotos.
-
-## Consideraciones para la funcionalidad actual (User Management)
-- Consumo de datos con `fetch` o `axios` dentro de `useEffect` en hooks de la feature (`features/user-management/hooks/useUsers.ts`).
-- Mostrar por cada usuario: `name` y `email`.
-- Implementar buscador por nombre en `UserFilters.tsx` + `useUsers`.
-- Mostrar "Cargando..." mientras se obtienen datos (estado `loading` en hook).
-- Utilizar `key` en listas.
-- Tests y tipado con TypeScript para mantener calidad.
-
-## Limpieza y mantenimiento
-- Eliminar archivos duplicados y componentes no usados.
-- Eliminar imports muertos.
-- Homogeneizar nombres y estructura.
-- Documentar cada feature con su `README` si es complejo.
-
 ## Cómo arrancar (ejemplo)
 1. Instalar dependencias: `npm install`
 2. Variables: ajustar `environments/environment.ts` con `baseUrl`.
